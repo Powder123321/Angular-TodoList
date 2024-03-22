@@ -1,0 +1,140 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card" style="border-color: rgb(177, 8, 8)">
+        <div
+          class="card-header text-white"
+          style="background-color: rgb(177, 8, 8)"
+        >
+          Register
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input
+                required
+                minlength="3"
+                maxlength="20"
+                ngModel
+                name="username"
+                #username="ngModel"
+                (change)="log(username)"
+                type="text"
+                class="form-control"
+                id="username"
+                placeholder="Enter username"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="username.touched && !username.valid"
+              >
+                <div *ngIf="username.errors?.['required']">
+                  Username is required
+                </div>
+                <div *ngIf="username.errors?.['minlength']">
+                  Username should be minimum
+                  {{ username.errors?.['minlength'].requiredLength }}
+                  characters.
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                required
+                minlength="3"
+                maxlength="10"
+                ngModel
+                name="email"
+                #email="ngModel"
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter email"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="email.touched && email.invalid"
+              >
+                <div *ngIf="email.errors?.['required']">Email is required</div>
+                <div *ngIf="email.errors?.['minlength']">
+                  Email should be minimum
+                  {{email.errors?.['minlength'].requiredLength}} characters
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                required
+                minlength="6"
+                maxlength="12"
+                ngModel
+                name="password"
+                #password="ngModel"
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+              />
+            </div>
+            <div
+              class="alert alert-danger"
+              *ngIf="password.touched && password.invalid"
+            >
+              <div *ngIf="password.errors?.['required']">
+                Password is required
+              </div>
+              <div *ngIf="password.errors?.['minlength']">
+                Password should be minimum
+                {{password.errors?.['minlength'].requiredLength}}
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="confirm-password" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                required
+                minlength="6"
+                maxlength="12"
+                ngModel
+                name="confirmpassword"
+                #confirmpassword="ngModel"
+                type="password"
+                class="form-control"
+                id="confirm-password"
+                placeholder="Confirm Password"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="confirmpassword.touched && confirmpassword.invalid"
+              >
+                <div *ngIf="confirmpassword.errors?.['required']">
+                  Password is required
+                </div>
+                <div *ngIf="confirmpassword.errors?.['minlength']">
+                  Password should be minimum
+                  {{confirmpassword.errors?.['minlength'].requiredLength}}
+                  characters
+                </div>
+              </div>
+            </div>
+            <button
+              (click)="registerform()"
+              type="submit"
+              class="btn btn-primary"
+              style="
+                background-color: rgb(177, 8, 8);
+                border-color: rgb(177, 8, 8);
+              "
+            >
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

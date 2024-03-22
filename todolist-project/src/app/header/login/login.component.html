@@ -1,0 +1,83 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card" style="border-color: rgb(177, 8, 8)">
+        <div
+          class="card-header text-white"
+          style="background-color: rgb(177, 8, 8)"
+        >
+          Log In
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input
+                minlength="3"
+                maxlength="10"
+                ngModel
+                name="username"
+                #username="ngModel"
+                type="text"
+                class="form-control"
+                id="username"
+                placeholder="Enter username"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="username.touched && username.invalid"
+              >
+                <div *ngIf="username.errors?.['required']">
+                  Username is required
+                </div>
+                <div *ngIf="username.errors?.['minlength']">
+                  Username should have minimum
+                  {{username.errors?.['minlength'].requiredLength}} characters
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                required
+                minlength="6"
+                maxlength="10"
+                ngModel
+                name="password"
+                #password="ngModel"
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="password.touched && password.invalid"
+              >
+                <div *ngIf="password.errors?.['required']">
+                  Password is required
+                </div>
+                <div *ngIf="password.errors?.['minlength']">
+                  Password should have minimum
+                  {{password.errors?.['minlength'].requiredLength}} characters
+                </div>
+              </div>
+            </div>
+
+            <button
+              (click)="login()"
+              type="submit"
+              class="btn btn-primary"
+              style="
+                background-color: rgb(177, 8, 8);
+                border-color: rgb(177, 8, 8);
+              "
+            >
+              Log In
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

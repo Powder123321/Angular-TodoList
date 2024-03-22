@@ -1,0 +1,31 @@
+<nav class="navbar" style="background-color: rgb(176, 14, 14)">
+  <div class="container-fluid">
+    <button
+      (click)="Lazylister()"
+      class="btn btn-link navbar-brand"
+      style="color: white; text-decoration: none"
+    >
+      LazyLister
+    </button>
+    <div class="d-flex">
+      <button
+        (click)="register()"
+        class="btn btn-outline-light me-2"
+        role="button"
+      >
+        Register
+      </button>
+      <button
+        (click)="Loginnav()"
+        class="btn btn-outline-light me-2"
+        role="button"
+      >
+        Log In
+      </button>
+
+      <button (click)="Logout()" class="btn btn-outline-light" role="button">
+        Log Out
+      </button>
+    </div>
+  </div>
+</nav>
