@@ -8,18 +8,21 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
-  password = '';
-  username = '';
-  login() {
-    this.router.navigate(['/home']);
-  }
-
   ngOnInit(): void {}
-  constructor(private router: Router, private LoginService: LoginService) {}
-
-  allAccounts: { username: string; password: string }[] = [
-    { username: '', password: '' },
-    { username: '', password: '' },
-    { username: '', password: '' },
-  ];
+  constructor(private router: Router, private loginService: LoginService) {}
+  password: string = '';
+  username: string = '';
+  login() {
+    this.loginService
+      .login(this.username, this.password)
+      .then(() => {
+        console.log('Login successful');
+        this.router.navigate(['/home']);
+        // Dacă loginul este reușit, navighează către pagina dorită
+      })
+      .catch((error: any) => {
+        // Gestionează cazurile de eroare
+        console.error('Login failed', error);
+      });
+  }
 }
