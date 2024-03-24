@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListService } from '../../savelist.service';
 
 @Component({
   selector: 'app-home',
@@ -25,12 +26,21 @@ export class HomeComponent implements OnInit {
         (this.newItemDescription = '');
   }
   saveList() {
-    this.savedItems = [...this.allItems];
-    // console.log(this.savedItems);
+    if (this.allItems.length > 0) {
+      this.listService.saveList(this.allItems).then(() => {
+        console.log('List saved successfully');
+        // Logica adițională după salvarea cu succes
+      });
+    } else {
+      console.log('No items to save');
+    }
   }
 
   deleteList() {
-    this.allItems = [];
+    if (this.allItems.length > 0) this.allItems = [...this.removedItems];
+    this.listService.deleteList(this.allItems).then(() => {
+      console.log('Deleted list succesfully deleted');
+    });
   }
 
   ngOnInit(): void {}
@@ -40,5 +50,5 @@ export class HomeComponent implements OnInit {
     { description: 'Sleep', done: true },
     { description: 'Eat', done: true },
   ];
-  constructor() {}
+  constructor(private listService: ListService) {}
 }

@@ -5,6 +5,7 @@ import { AboutComponent } from './body/about/about.component';
 import { LoginComponent } from './header/login/login.component';
 import { RegisterComponent } from './header/register/register.component';
 import { SuccesComponent } from './body/succes/succes.component';
+import { ReviewsComponent } from './header/reviews/reviews.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'succes', component: SuccesComponent },
+  { path: 'reviews', component: ReviewsComponent },
 ];
 
 @NgModule({

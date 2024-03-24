@@ -14,6 +14,11 @@ import { NavbarComponent } from './header/navbar/navbar/navbar.component';
 import { LoginComponent } from './header/login/login.component';
 import { RegisterComponent } from './header/register/register.component';
 import { SuccesComponent } from './body/succes/succes.component';
+import { ReviewsComponent } from './header/reviews/reviews.component';
+import { HttpClientModule } from '@angular/common/http';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -25,8 +30,26 @@ import { SuccesComponent } from './body/succes/succes.component';
     LoginComponent,
     RegisterComponent,
     SuccesComponent,
+    ReviewsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    provideFirebaseApp(() =>
+      initializeApp({
+        projectId: 'angular-list-system',
+        appId: '1:263424808695:web:2d32ee1faec539bf1f65f2',
+        storageBucket: 'angular-list-system.appspot.com',
+        apiKey: 'AIzaSyBRTabBG6lCG-slOBv1K3dhRkUfRf5Z4AY',
+        authDomain: 'angular-list-system.firebaseapp.com',
+        messagingSenderId: '263424808695',
+      })
+    ),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+  ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
