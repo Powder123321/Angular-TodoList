@@ -9,15 +9,15 @@
           Log In
         </div>
         <div class="card-body">
-          <form (ngSubmit)="login()">
+          <form (ngSubmit)="login(username.value, password.value)">
             <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
+              <label for="username-input" class="form-label">Username</label>
               <input
+                ngModel
+                name="username"
                 autocomplete="username"
                 minlength="3"
                 maxlength="10"
-                ngModel
-                name="username"
                 #username="ngModel"
                 type="text"
                 class="form-control"
@@ -38,14 +38,14 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
+              <label for="password-input" class="form-label">Password</label>
               <input
+                ngModel
+                name="password"
                 autocomplete="current-password"
                 required
                 minlength="6"
                 maxlength="10"
-                ngModel
-                name="password"
                 #password="ngModel"
                 type="password"
                 class="form-control"

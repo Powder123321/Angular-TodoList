@@ -1,17 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-reviews',
   templateUrl: './reviews.component.html',
   styleUrl: './reviews.component.scss',
 })
-export class ReviewsComponent {
+export class ReviewsComponent implements OnInit {
   comments: any[] = [];
-  constructor(http: HttpClient) {
-    http
+  constructor(private http: HttpClient) {}
+  ngOnInit() {
+    this.http
       .get<any[]>('https://jsonplaceholder.typicode.com/comments')
-      .subscribe((response) => {
+      .subscribe((response: any[]) => {
         this.comments = response.slice(0, 5);
       });
   }

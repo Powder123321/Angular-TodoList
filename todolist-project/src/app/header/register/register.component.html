@@ -11,30 +11,30 @@
         <div class="card-body">
           <form>
             <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
+              <label for="register-username" class="form-label">Username</label>
               <input
                 required
                 minlength="3"
                 maxlength="20"
                 ngModel
-                name="username"
-                #username="ngModel"
-                (change)="log(username)"
+                name="register-username"
+                #registerusername="ngModel"
+                (change)="log(registerusername)"
                 type="text"
                 class="form-control"
-                id="username"
+                id="register-username"
                 placeholder="Enter username"
               />
               <div
                 class="alert alert-danger"
-                *ngIf="username.touched && !username.valid"
+                *ngIf="registerusername.touched && !registerusername.valid"
               >
-                <div *ngIf="username.errors?.['required']">
+                <div *ngIf="registerusername.errors?.['required']">
                   Username is required
                 </div>
-                <div *ngIf="username.errors?.['minlength']">
+                <div *ngIf="registerusername.errors?.['minlength']">
                   Username should be minimum
-                  {{ username.errors?.['minlength'].requiredLength }}
+                  {{ registerusername.errors?.['minlength'].requiredLength }}
                   characters.
                 </div>
               </div>
@@ -65,30 +65,30 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
+              <label for="register-password" class="form-label">Password</label>
               <input
                 required
                 minlength="6"
                 maxlength="12"
                 ngModel
-                name="password"
-                #password="ngModel"
+                name="register-password"
+                #registerpassword="ngModel"
                 type="password"
                 class="form-control"
-                id="password"
+                id="register-password"
                 placeholder="Password"
               />
             </div>
             <div
               class="alert alert-danger"
-              *ngIf="password.touched && password.invalid"
+              *ngIf="registerpassword.touched && registerpassword.invalid"
             >
-              <div *ngIf="password.errors?.['required']">
+              <div *ngIf="registerpassword.errors?.['required']">
                 Password is required
               </div>
-              <div *ngIf="password.errors?.['minlength']">
+              <div *ngIf="registerpassword.errors?.['minlength']">
                 Password should be minimum
-                {{password.errors?.['minlength'].requiredLength}}
+                {{registerpassword.errors?.['minlength'].requiredLength}}
               </div>
             </div>
             <div class="mb-3">

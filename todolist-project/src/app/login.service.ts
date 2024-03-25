@@ -7,7 +7,7 @@ import { Firestore, setDoc, collection, doc } from '@angular/fire/firestore';
 export class LoginService {
   constructor(private firestore: Firestore) {}
 
-  async login(username: string, password: string): Promise<void> {
+  async loginservice(username: string, password: string): Promise<void> {
     console.log('Logging in with', username, password);
 
     try {
