@@ -1,3 +1,4 @@
+import { RegisterService } from './../../register.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,11 +9,21 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
-  constructor(private router: Router) {}
-  registerform() {
-    this.router.navigate(['/succes']);
-  }
-  log(x: any) {
-    console.log(x);
+  constructor(
+    private router: Router,
+    private registerService: RegisterService
+  ) {}
+  registerform(
+    password: string,
+    username: string,
+    email: string,
+    confirmpassword: string
+  ) {
+    this.registerService
+      .registerService(password, username, email, confirmpassword)
+      .then(() => {
+        console.log('Login successful');
+        this.router.navigate(['/succes']);
+      });
   }
 }

@@ -9,7 +9,16 @@
           Register
         </div>
         <div class="card-body">
-          <form>
+          <form
+            (submit)="
+              registerform(
+                registerusername.value,
+                registerpassword.value,
+                email.value,
+                confirmpassword.value
+              )
+            "
+          >
             <div class="mb-3">
               <label for="register-username" class="form-label">Username</label>
               <input
@@ -19,7 +28,6 @@
                 ngModel
                 name="register-username"
                 #registerusername="ngModel"
-                (change)="log(registerusername)"
                 type="text"
                 class="form-control"
                 id="register-username"
@@ -44,7 +52,7 @@
               <input
                 required
                 minlength="3"
-                maxlength="10"
+                maxlength="20"
                 ngModel
                 name="email"
                 #email="ngModel"
@@ -69,7 +77,7 @@
               <input
                 required
                 minlength="6"
-                maxlength="12"
+                maxlength="20"
                 ngModel
                 name="register-password"
                 #registerpassword="ngModel"
@@ -98,7 +106,7 @@
               <input
                 required
                 minlength="6"
-                maxlength="12"
+                maxlength="20"
                 ngModel
                 name="confirmpassword"
                 #confirmpassword="ngModel"
@@ -122,7 +130,6 @@
               </div>
             </div>
             <button
-              (click)="registerform()"
               type="submit"
               class="btn btn-primary"
               style="
