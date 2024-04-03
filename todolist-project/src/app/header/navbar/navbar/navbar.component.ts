@@ -1,3 +1,4 @@
+import { LoginService } from './../../../login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
@@ -6,15 +7,22 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements OnInit {
-  ngOnInit(): void {}
-  constructor(private router: Router) {}
+  ngOnInit(): void {
+    this.LoginService.currentUser.subscribe((user) => {
+      this.isLoggedIn = !!user;
+    });
+  }
+
+  isLoggedIn = false;
+  constructor(private router: Router, private LoginService: LoginService) {}
 
   Loginnav() {
     this.router.navigate(['/login']);
   }
 
   Logout() {
-    this.router.navigate(['/about']);
+    this.LoginService.logoutService();
+    this.isLoggedIn = false;
   }
   Lazylister() {
     this.router.navigate(['/about']);

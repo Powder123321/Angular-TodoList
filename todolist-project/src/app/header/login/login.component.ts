@@ -8,13 +8,12 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
-  [x: string]: any;
   ngOnInit(): void {}
-  constructor(private router: Router, private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
-  login(password: string, username: string) {
+  login(email: string, password: string) {
     this.loginService
-      .loginservice(password, username)
+      .loginService(email, password)
 
       .then(() => {
         console.log('Login successful');

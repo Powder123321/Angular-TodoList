@@ -9,6 +9,7 @@
     </button>
     <div class="d-flex">
       <button
+        *ngIf="!isLoggedIn"
         (click)="register()"
         class="btn btn-outline-light me-2"
         role="button"
@@ -16,6 +17,7 @@
         Register
       </button>
       <button
+        *ngIf="!isLoggedIn"
         (click)="Loginnav()"
         class="btn btn-outline-light me-2"
         role="button"
@@ -23,7 +25,12 @@
         Log In
       </button>
 
-      <button (click)="Logout()" class="btn btn-outline-light" role="button">
+      <button
+        *ngIf="isLoggedIn"
+        (click)="Logout()"
+        class="btn btn-outline-light"
+        role="button"
+      >
         Log Out
       </button>
 

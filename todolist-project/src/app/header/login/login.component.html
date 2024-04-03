@@ -9,31 +9,31 @@
           Log In
         </div>
         <div class="card-body">
-          <form (ngSubmit)="login(username.value, password.value)">
+          <form (ngSubmit)="login(email.value, password.value)">
             <div class="mb-3">
-              <label for="username-input" class="form-label">Username</label>
+              <label for="username-input" class="form-label">Email</label>
               <input
                 ngModel
-                name="username"
-                autocomplete="username"
+                name="email"
+                autocomplete="email"
                 minlength="3"
-                maxlength="10"
-                #username="ngModel"
-                type="text"
+                maxlength="30"
+                #email="ngModel"
+                type="email"
                 class="form-control"
                 id="username-input"
-                placeholder="Enter username"
+                placeholder="Enter email"
               />
               <div
                 class="alert alert-danger"
-                *ngIf="username.touched && username.invalid"
+                *ngIf="email.touched && email.invalid"
               >
-                <div *ngIf="username.errors?.['required']">
+                <div *ngIf="email.errors?.['required']">
                   Username is required
                 </div>
-                <div *ngIf="username.errors?.['minlength']">
+                <div *ngIf="email.errors?.['minlength']">
                   Username should have minimum
-                  {{username.errors?.['minlength'].requiredLength}} characters
+                  {{email.errors?.['minlength'].requiredLength}} characters
                 </div>
               </div>
             </div>
@@ -45,7 +45,7 @@
                 autocomplete="current-password"
                 required
                 minlength="6"
-                maxlength="10"
+                maxlength="30"
                 #password="ngModel"
                 type="password"
                 class="form-control"
