@@ -12,32 +12,40 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environments';
 
 // Components
-import { HomeComponent } from './body/home/home.component';
-import { AboutComponent } from './body/about/about.component';
-import { HeaderComponent } from './header/header.component';
-import { NavbarComponent } from './header/navbar/navbar/navbar.component';
-import { LoginComponent } from './header/login/login.component';
-import { RegisterComponent } from './header/register/register.component';
-import { SuccesComponent } from './body/succes/succes.component';
-import { ReviewsComponent } from './header/reviews/reviews.component';
+import { HomeComponent } from './FeatureAppToDo/body/home/home.component';
+
+import { NavbarComponent } from './CoreApp/navbar/navbar.component';
+import { LoginComponent } from './CoreApp/login/login.component';
+import { RegisterComponent } from './CoreApp/register/register.component';
+import { SuccesComponent } from './FeatureAppToDo/body/succes/succes.component';
+
+import { BodycoreComponent } from './CoreApp/bodycore/bodycore.component';
+import { SidebarcoreComponent } from './CoreApp/sidebarcore/sidebarcore.component';
+import { DestinationsComponent } from './FeatureDestinations/destinations/destinations.component';
+import { ScheduleComponent } from './CoreApp/Schedule/schedule/schedule.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
-    HeaderComponent,
+    BodycoreComponent,
+
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
     SuccesComponent,
-    ReviewsComponent,
+
+    SidebarcoreComponent,
+    DestinationsComponent,
+    ScheduleComponent,
   ],
   imports: [
     BrowserModule,
+
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

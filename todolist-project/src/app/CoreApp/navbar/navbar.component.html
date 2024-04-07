@@ -1,0 +1,46 @@
+<nav class="navbar" style="background-color: rgb(176, 14, 14)">
+  <div class="container-fluid">
+    <button
+      (click)="HolidayCompass()"
+      class="btn btn-link navbar-brand"
+      style="color: white; text-decoration: none"
+    >
+      Holiday Compass
+    </button>
+    <div class="d-flex">
+      <button
+        *ngIf="!isLoggedIn"
+        (click)="register()"
+        class="btn btn-outline-light me-2"
+        role="button"
+      >
+        Register
+      </button>
+      <button
+        *ngIf="!isLoggedIn"
+        (click)="Loginnav()"
+        class="btn btn-outline-light me-2"
+        role="button"
+      >
+        Log In
+      </button>
+
+      <button
+        *ngIf="isLoggedIn"
+        (click)="Logout()"
+        class="btn btn-outline-light"
+        role="button"
+      >
+        Log Out
+      </button>
+      <button
+        (click)="goSchedule()"
+        *ngIf="isLoggedIn"
+        class="btn btn-outline-light me-2"
+        role="button"
+      >
+        My Schedule
+      </button>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,17 @@
+.img-hover-zoom {
+  transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover {
+  transform: scale(
+    1.1
+  ); /* Adjust the scale to control how much the image grows */
+}
+
+.card-hover-zoom {
+  transition: transform 0.5s ease;
+}
+
+.card-hover-zoom:hover {
+  transform: scale(1.05); /* Adjust the scale value as needed */
+}

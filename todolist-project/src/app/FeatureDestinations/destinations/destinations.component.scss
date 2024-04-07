@@ -1,0 +1,11 @@
+/* Clasă personalizată pentru culoarea butonului */
+.btn-custom {
+  background-color: #8b0000; /* Roșu închis spre visiniu */
+  color: white; /* Text alb pentru contrast */
+}
+/* Asigură că butonul nu pierde culoarea la hover/focus */
+.btn-custom:hover,
+.btn-custom:focus {
+  background-color: #7a0000; /* O nuanță puțin mai deschisă pentru efect */
+  color: white;
+}
