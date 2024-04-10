@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { BehaviorSubject } from 'rxjs';
-import { User } from '@angular/fire/auth';
+import { User } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root',
