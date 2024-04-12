@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './bodycore.component.scss',
 })
 export class BodycoreComponent implements OnInit {
+  featureHotel() {
+    this.router.navigate(['/hotels']);
+  }
   goDestinations() {
     this.router
       .navigate(['/destinations'])

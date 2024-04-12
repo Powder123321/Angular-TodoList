@@ -1,14 +1,54 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">Destination</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let destination of destinations; let i = index">
-      <th scope="row">{{ i + 1 }}</th>
-      <td>{{ destination }}</td>
-    </tr>
-  </tbody>
-</table>
+<!-- Add a container for proper alignment and padding -->
+<div class="container mt-4">
+  <!-- Destinations Table -->
+  <div class="card shadow mb-4">
+    <!-- Card component for better visual separation -->
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Destinations</h6>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-striped table-hover" responsive>
+        <!-- Enhanced table classes -->
+        <thead class="thead-dark">
+          <!-- Dark theme for the table header -->
+          <tr>
+            <th scope="col">Details:</th>
+            <th scope="col">Destination</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let destination of destinations; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ destination }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Hotels Table -->
+  <div class="card shadow">
+    <!-- Card component for better visual separation -->
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Hotels</h6>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-striped table-hover" responsive>
+        <!-- Enhanced table classes -->
+        <thead class="thead-dark">
+          <!-- Dark theme for the table header -->
+          <tr>
+            <th scope="col">Details:</th>
+            <th scope="col">Hotel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hotel of hotels; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ hotel }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

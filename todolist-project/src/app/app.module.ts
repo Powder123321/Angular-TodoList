@@ -23,6 +23,7 @@ import { BodycoreComponent } from './CoreApp/bodycore/bodycore.component';
 import { SidebarcoreComponent } from './CoreApp/sidebarcore/sidebarcore.component';
 import { DestinationsComponent } from './FeatureDestinations/destinations/destinations.component';
 import { ScheduleComponent } from './CoreApp/Schedule/schedule/schedule.component';
+import { HotelsComponent } from './FeatureHotels/hotels/hotels.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ScheduleComponent } from './CoreApp/Schedule/schedule/schedule.componen
     SidebarcoreComponent,
     DestinationsComponent,
     ScheduleComponent,
+    HotelsComponent,
   ],
   imports: [
     BrowserModule,

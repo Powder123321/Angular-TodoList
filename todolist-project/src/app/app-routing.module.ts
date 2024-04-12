@@ -10,6 +10,7 @@ import { NavbarComponent } from './CoreApp/navbar/navbar.component';
 import { SidebarcoreComponent } from './CoreApp/sidebarcore/sidebarcore.component';
 import { DestinationsComponent } from './FeatureDestinations/destinations/destinations.component';
 import { ScheduleComponent } from './CoreApp/Schedule/schedule/schedule.component';
+import { HotelsComponent } from './FeatureHotels/hotels/hotels.component';
 
 const routes: Routes = [
   { path: '', component: BodycoreComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'succes', component: SuccesComponent },
   { path: 'destinations', component: DestinationsComponent },
   { path: 'schedule', component: ScheduleComponent },
+  { path: 'hotels', component: HotelsComponent },
 ];
 
 @NgModule({

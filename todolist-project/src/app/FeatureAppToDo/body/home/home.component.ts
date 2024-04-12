@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
     if (this.allItems.length > 0) {
       this.listService.saveList(this.allItems).then(() => {
         console.log('List saved successfully');
+        console.log(this.allItems);
+
         // Logica adițională după salvarea cu succes
       });
     } else {
